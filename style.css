@@ -1,0 +1,205 @@
+#page {
+  display: flex;
+  font-family: "Charm", cursive;
+}
+
+header {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+header #menu {
+  text-align: right;
+  margin-right: 10px;
+}
+
+.fab {
+  color: white;
+  font-size: 48px;
+  transition: .5s;
+}
+
+.fab:hover{
+  color: red;
+}
+
+.carousel-item{
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  font-size: 72px;
+}
+
+#first {
+  background-image: url(pics/ABmin.jpg);
+}
+
+#second {
+  background-image: url(pics/main.jpg);
+}
+
+.column{
+  float: left;
+  padding: 0 !important
+}
+
+#about {
+  height: 100vh;
+  min-height: 600px;
+  background-color: #100E0E;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-between;
+}
+
+#about h1 {
+  font-size: 72px;
+  text-align: center;
+  display: block;
+}
+
+#about h1::after {
+  content: "I'm a visual artist with passion for the world";
+  display: block;
+  font-size: 32px;
+}
+
+.icon {
+  display: flex;
+  justify-content: space-between;
+  width: 30vw;
+}
+
+.title {
+  text-align: center;
+  color: white;
+}
+
+#info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.pictures {
+  display: inline;
+  border: none;
+  height: auto;
+  padding: 0 !important;
+  margin: 0 !important;
+  transition: opacity 0.8s ease, transform 1s ease;
+}
+
+.pictures h2 {
+  color: white;
+  padding: 8% 0 0 25px;
+  position: absolute;
+  text-align: left;
+  top: 0;
+  opacity: 0;
+  transition: 0.8s ease;
+  transform-origin: left;
+}
+
+.pictures h2::after {
+  display: block;
+  content: "";
+  background-color: white;
+  width: 100%;
+  height: 5px;
+  max-width: 450px;
+  position: relative;
+  margin-top: 5px;
+  border-radius: 10px;
+  transition: 0.8s ease;
+  transform-origin: left;
+  -webkit-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  transform: scale(0, 0);
+}
+
+.pictures h4 {
+  color: white;
+  width: auto;
+  bottom: 20px;
+  padding: 8% 0 0 25px;
+  transition: 0.8s;
+  position: absolute;
+  opacity: 0;
+}
+
+.pictures img{
+  filter: brightness(100%);
+  -webkit-filter: brightness(100%);
+   transition: 1s;
+}
+
+.pictures:hover img{
+  filter: brightness(40%);
+  -webkit-filter: brightness(40%);
+}
+
+.pictures:hover h2 {
+  opacity: 1;
+}
+
+.pictures:hover h2::after {
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+
+.pictures:hover h4 {
+  opacity: 1;
+}
+
+.modal-content {
+  background-color: rgba(0, 0, 0, 0) !important;
+  border: none !important;
+}
+
+.modal-content .modal-body, .modal-content .modal-header, .modal-content .modal-footer {
+  padding: 0 !important;
+  text-align: center !important;
+  width: 100% !important;
+  justify-content: center !important;
+  border: none !important;
+  color: white;
+}
+
+.carousel-item{
+  min-height: 100vh;
+  height: auto !important;
+}
+
+.modal-header button {
+  align-self: flex-end;
+  margin: 0 !important;
+}
+
+.modal-header .close {
+  color: white;
+}
+
+.car-img {
+  max-width: 100%;
+  overflow-y: visible !important;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #100E0E;
+  color: gray;
+  padding: 50px 0;
+}
+
+footer input {
+  margin-bottom: 2%;
+}
+
+/*# sourceMappingURL=style.css.map */
