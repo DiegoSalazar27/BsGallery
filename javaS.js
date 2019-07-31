@@ -1,16 +1,26 @@
-function image(){
-  closegall();
-  let node;
-  let source;
-  let i;
-  let length = arguments.length-1;
-  let listItem;
-  let father= document.getElementById("FotosCarousel");
-  let fatheri= document.getElementById("indicadores");
-  let modalHeader = document.getElementById("modalh");
-  let modalFooter = document.getElementById("modalf");
+let node;
+let source;
+let listItem;
+const pictures = document.getElementsByClassName('pictures');
+const father= document.getElementById("FotosCarousel");
+const fatheri= document.getElementById("indicadores");
+const modalHeader = document.getElementById("modalh");
+const modalFooter = document.getElementById("modalf");
 
-  for(i = 0; i < length; i++){
+
+window.addEventListener("load", function() {
+
+  for (let i = 0; i < pictures.length; i++){
+    pictures[i].addEventListener("click", x);
+  }
+});
+
+
+const x = function image(){
+  closegall();
+
+  let img = this.dataset.img.split(",");
+  for(let i = 0; i < img.length; i++){
     node= document.createElement("div");
     source= document.createElement("img");
 
@@ -20,7 +30,7 @@ function image(){
       node.setAttribute("class", "carousel-item");
     }
     source.setAttribute("class", "car-img");
-    source.setAttribute("src", arguments[i+1]);
+    source.setAttribute("src", img[i]);
     node.appendChild(source);
     father.appendChild(node);
     listItem= document.createElement("li");
@@ -34,11 +44,10 @@ function image(){
     fatheri.appendChild(listItem);
   }
 
-
-  var text = document.getElementsByClassName("head")[arguments[0]].innerHTML;
-  modalHeader.innerHTML = text;
-  text = document.getElementsByClassName("foot")[arguments[0]].innerHTML;
-  modalFooter.innerHTML = text;
+  console.log(this.firstChild);
+  console.log(this.firstElementChild);
+  modalHeader.innerHTML = this.firstElementChild.innerHTML;
+  modalFooter.innerHTML = this.lastElementChild.innerHTML;
 }
 
 function closegall(){
